@@ -7,7 +7,9 @@
 #' @return Text string with praise
 #' @export
 #' @examples praise(name = "Jess", punctuation = "!)
-praise <- function(name, punctuation = "!") {
-  # paste0("You're the best, ", name, punctuation)
-  glue::glue("You're the best, {name}{punctuation}")
+praise <- function(name = "Jess", punctuation = "!") {
+  compliments <- c(glue::glue("You're a badass, {name}{punctuation}"),
+                   glue::glue("Code like a badass, {name}{punctuation}"),
+                   glue::glue("You're the best, {name}{punctuation}"))
+  sample(compliments, 1)
 }
